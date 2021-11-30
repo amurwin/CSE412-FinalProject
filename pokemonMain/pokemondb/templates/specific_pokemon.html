@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+        <div class="mw6 center pa3 sans-serif">
+
+            <h1 class="mb4">pokemon: {{pokemon.name}}</h1>
+
+            <header class="b mb2">Basic Info:</header>
+
+
+            <div class="pa2 mb3 striped--near-white">
+
+                <div class="pl2">
+
+                    <p class="mb2">Pokedex #: {{ pokemon.pokedex_no }}</p>
+                    
+                    <p class="mb2">Weight: {{ pokemon.weight }}</p>
+
+                    <p class="mb2">Height: {{ pokemon.height }}</p>
+                    
+                    <p class="mb2">Description: {{ pokemon.pokedex_entry }}</p>
+
+
+                </div>
+
+            </div>
+
+            <header class="b mb2">Moves:</header>
+
+            <table border = "1", cellpadding = "5", cellspacing = "5">
+            <td>Name</td>
+            <td>Type(s)</td>
+            <td>Category</td>
+            <td>Power</td>
+            <td>Accuracy</td>
+            <td>PP</td>
+
+            {% for move in moves %}
+            <tr>
+                <td><a href="{% url 'move' move.name%}">{{ move.name }}</a></td>
+                <td>{{ move.m_type }}</td>
+                <td>{{ move.category }}</td>
+                <td>{{ move.power }}</td>
+                <td>{{ move.accuracy }}</td>
+                <td>{{ move.pp }}</td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+
+    <header class="b mb2">Abilities:</header>
+
+        {% for ability in abilities %}
+
+        <div class="pa2 mb3 striped--near-white">
+
+            <div class="pl2">
+
+                <p class="mb2">Name: <a href="{% url 'ability' ability.name%}">{{ ability.name }}</a></p>
+                
+                <p class="mb2">Description: {{ ability.description }}</p>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+
+            <header class="b mb2">Forms:</header>
+
+        {% for form in details %}
+
+        <div class="pa2 mb3 striped--near-white">
+
+            <div class="pl2">
+
+                <p class="mb2">Name: {{ form.form }}</p>
+                
+                <p class="mb2">Type(s): {{ form.types }}</p>
+
+                <p class="mb2"> <img src="{{ form.picture }}"
+                                width=20%
+                                height=auto /> </p>
+
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+        </div>
+
+{% endblock %}

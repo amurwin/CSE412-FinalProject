@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+        <title>Contacts</title>
+
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+
+    </head>
+
+    {% block nav %}
+    <ul id="nav">
+        <li>{% block nav-home %}<a href="{% url 'poke_details' %}">Home</a>{% endblock %}</li>
+        <li>{% block nav-about %}<a href="{% url 'abilities' %}">Abilites</a>{% endblock %}</li>
+        <li>{% block nav-contact %}<a href="{% url 'moves' %}">Moves</a>{% endblock %}</li>
+    </ul>
+    {% endblock %}
+
+    <body>
+
+    {% block page_content %}{% endblock %}
+
+    </body>
+
+</html>

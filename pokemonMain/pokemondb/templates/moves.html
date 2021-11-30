@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+        <div class="mw6 center pa3 sans-serif">
+
+            <h1 class="mb4">Moves</h1>
+
+        {% for move in moves.all %}
+
+            <div class="pa2 mb3 striped--near-white">
+
+                <div class="pl2">
+                
+                    <p class="mb2">Name: <a href="{% url 'move' move.name%}">{{ move.name }}</a></p>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+        </div>
+
+{% endblock %}

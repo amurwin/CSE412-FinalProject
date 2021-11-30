@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+        <div class="mw6 center pa3 sans-serif">
+
+            <h1 class="mb4">Ability: {{ability.name}}</h1>
+
+            <header class="b mb2">Description: {{ability.description}}</header>
+
+            <header class="b mb2">Pokemon With Ability:</header>
+
+            <table border = "1", cellpadding = "5", cellspacing = "5">
+            <td>Image</td>
+            <td>Name</td>
+
+            {% for pokemon in pokemons %}
+            <tr>
+                <td><img src="{{ pokemon.picture }}"
+                     width=20%
+                     height=auto /></td>
+                <td><a href="{% url 'details' pokemon.unique.pokedex_no%}">{{ pokemon.form }}</a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+
+        </div>
+
+{% endblock %}
