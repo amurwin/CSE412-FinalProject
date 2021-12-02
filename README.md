@@ -11,7 +11,7 @@ This application was developed and tested on ```Ubuntu-LTS 18.04```
 * Exit postgres with ```\q``` and back in the main terminal load in the SQL dump
   * ```sudo -u postgres psql <database name> < /path/to/pokemondb.sql```
 
-#Setup Python
+# Setup Python
 * Install python 3
 * Install Django: ```pip install Django```
 * Install psycopg2: ```pip install psycopg2-binary```
