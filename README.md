@@ -1,6 +1,7 @@
 # CSE412-FinalProject
 This application was developed and tested on ```Ubuntu-LTS 18.04```
 # Install & Setup Postgres
+* # Note: If you already have postgres installed and setup you might need to run ```sudo service postgresql start``` to get postgres up and running
 * Download postgres with: ```sudo apt install postgresql```
 * Login to your user (postgres here) and set the password
   * ```sudo -u postgres psql -c "ALTER USER postgres PASSWORD '<password>';"```
