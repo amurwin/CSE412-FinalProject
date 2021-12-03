@@ -43,5 +43,7 @@ DATABASES = {
 * Run migrations for Django (Make sure you are in ```/pokemonMain```:
   * ```python manage.py makemigrations```
   * ```python manage.py migrate```
+
+# Run The Site
 * Finally you can start the server and load the site!
   * ```python manage.py runserver```
